@@ -1,0 +1,13 @@
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\MovieImporter.exe.config
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\filmer.mdb
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\MovieImporter.exe
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\MovieImporter.pdb
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\EntityFramework.dll
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\MovieDAL.dll
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\MovieDAL.pdb
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\EntityFramework.xml
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\obj\x86\Debug\MovieImporter.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\obj\x86\Debug\MovieImporter.exe
+C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\obj\x86\Debug\MovieImporter.pdb

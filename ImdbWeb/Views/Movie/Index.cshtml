@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MovieDAL.Movie>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Index</title>
+</head>
+<body>
+
+	@for (char i = (char)65; i <= 90; i++)
+	{
+		<a href ="#@i">@i</a>
+	}
+
+	<ul>
+		@{
+			string lastLetter = null;
+		}
+		@foreach (var movie in Model)
+		{
+			if (lastLetter != movie.Title.Substring(0, 1))
+			{
+				lastLetter = movie.Title.Substring(0, 1);
+				<h3 id="@lastLetter">@lastLetter</h3>
+			}
+
+			<li>
+				@Html.ActionLink(movie.Title, "Details", new { id = movie.MovieId })
+			</li>
+		}
+	</ul>
+
+</body>
+</html>

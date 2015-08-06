@@ -1,0 +1,48 @@
+﻿@model MovieDAL.Person
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+		<dt>
+			Directed:
+		</dt>
+
+			@foreach (var item in Model.DirectedMovies)
+			{
+				<dd>@item.OriginalTitle</dd>
+			}		
+
+
+		<dt>
+			Produced:
+		</dt>
+
+		@foreach (var item in Model.ProducedMovies)
+				{
+			<dd>@item.OriginalTitle</dd>
+				}
+
+		<dt>
+			Acted in:
+		</dt>
+		@foreach (var item in Model.ActedMovies)
+				{
+			<dd>@item.OriginalTitle</dd>
+				}
+		</dl>
+
+</div>

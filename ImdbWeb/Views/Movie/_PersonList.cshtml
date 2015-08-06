@@ -1,0 +1,7 @@
+﻿
+@Model IEnumerable<MovieDAL.Person>
+
+@foreach (var item in Model.Directors)
+{
+	<dd>@Html.ActionLink((String)item.Name, "Details", "Person", new { id = (int)item.PersonId }, null)</dd>
+}

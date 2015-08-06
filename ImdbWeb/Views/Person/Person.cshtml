@@ -1,0 +1,29 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Person";
+}
+
+@for (char i = (char)65; i <= 90; i++)
+{
+	<a href="#@i">@i </a>
+}
+
+<ul>
+	@{
+		string lastLetter = null;
+	}
+	@foreach (var person in Model.Persons)
+	{
+		if (lastLetter != person.Name.Substring(0, 1))
+		{
+			lastLetter = person.Name.Substring(0, 1);
+			<h3 id="@lastLetter">@lastLetter</h3>
+		}
+
+		<li>
+			@Html.ActionLink((String)person.Name, "Details", "Person", new { id = (int)person.PersonId }, null)
+		</li>
+	}
+</ul>
+
