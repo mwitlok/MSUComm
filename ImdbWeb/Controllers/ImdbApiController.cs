@@ -9,8 +9,8 @@ using System.Xml.Serialization;
 
 namespace ImdbWeb.Controllers
 {
-    public class ImdbApiController : Controller
-    {
+	public class ImdbApiController : Controller
+	{
 		MovieDAL.ImdbContext db = new MovieDAL.ImdbContext();
 
 		protected override void Dispose(bool disposable)
@@ -21,40 +21,47 @@ namespace ImdbWeb.Controllers
 
 		// GET: ImdbApi
 		public ActionResult Movies()
-        {	
-			var movies = db.Movies.OrderBy(x => x.Title).Select( x => new { id = x.MovieId, title = x.Title}).ToList();
+		{
+			var movies = db.Movies.OrderBy(x => x.Title).Select(x => new { id = x.MovieId, title = x.Title }).ToList();
 
 			XDocument document = new XDocument
 			(
 
-			  new XDeclaration("1.0", "utf-8", "yes"),
-			  new XElement("Movies",
-
-				  from m in movies
-				  select new XElement("Movie", new XAttribute("ID", m.id),
-				  new XElement("Title", m.title)))
+				new XDeclaration("1.0", "utf-8", "yes"),
+				new XElement("Movies",
+					from m in movies
+					select new XElement("Movie", new XAttribute("ID", m.id),
+					new XElement("Title", m.title))
+				)
 			);
 
 			return Content(document.ToString(), "application/xml");
-        }
+		}
 
 		[Route("Movie/Details/{id}.xml")]
 		public ActionResult Details(string id)
 		{
 			var movies = db.Movies.Find(id);
 
-			XDocument document = new XDocument
-			(
-
-			new XDeclaration("1.0", "utf-8", "yes"),
-				  new XElement("Movie", new XAttribute("ID", id),
-				  new XElement("Title", movies.Title),
-				  new XElement("OriginalTitle", movies.OriginalTitle),
-				  new XElement("ProductionYear", movies.ProductionYear),
-				  new XElement("RunningLength", movies.RunningLength))
-            );
-
-			return Content(document.ToString(), "application/xml");
+			if(movies != null)
+			{
+				XDocument document = new XDocument
+				(
+					new XDeclaration("1.0", "utf-8", "yes"),
+					new XElement("movie",
+						new XAttribute("id", id),
+						new XElement("title", movies.Title),
+						new XElement("originalTitle", movies.OriginalTitle),
+						new XElement("productionYear", movies.ProductionYear),
+						new XElement("runningLength", movies.RunningLength),
+						new XElement("actors", 
+							from p in movies.Actors select new XElement("name", p.Name)
+						)
+					)
+				);
+				return Content(document.ToString(), "application/xml");
+			}
+			return HttpNotFound($"No movie with id: {id} exists.");
 		}
-    }
+	}
 }
