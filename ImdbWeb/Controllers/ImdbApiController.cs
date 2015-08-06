@@ -24,11 +24,7 @@ namespace ImdbWeb.Controllers
 		{
 			var movies = db.Movies.OrderBy(x => x.Title).Select(x => new { id = x.MovieId, title = x.Title }).ToList();
 
-			if (fmt.ToLower() == "json")
-			{
-				return Json(movies, JsonRequestBehavior.AllowGet);
-			}
-			else
+			if (fmt == null || fmt.ToLower() != "json")
 			{
 				XDocument document = new XDocument
 				(
@@ -40,11 +36,13 @@ namespace ImdbWeb.Controllers
 						new XElement("Title", m.title))
 					)
 				);
-				
+
 				return Content(document.ToString(), "application/xml");
 			}
-
-			
+			else
+			{
+				return Json(movies, JsonRequestBehavior.AllowGet);
+			}			
 		}
 
 		[Route("Movie/Details/{id}.xml")]
