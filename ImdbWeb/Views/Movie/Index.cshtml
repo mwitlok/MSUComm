@@ -28,6 +28,8 @@
 
 			<li>
 				@Html.ActionLink(movie.Title, "Details", new { id = movie.MovieId })
+				@{ string s = movie.MovieId.ToString() + ".xml";}
+				(<a href="/Movie/Details/@s">xml</a>)
 			</li>
 		}
 	</ul>
