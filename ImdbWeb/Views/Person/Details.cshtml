@@ -18,31 +18,35 @@
         </dd>
 
 		<dt>
-			Directed:
+			<b>Directed:</b>
 		</dt>
 
 			@foreach (var item in Model.DirectedMovies)
 			{
 				<dd>@item.OriginalTitle</dd>
+				@General.ImageHelper("thumb", item.MovieId)
 			}		
 
 
 		<dt>
-			Produced:
+			<b>Produced:</b>
 		</dt>
 
 		@foreach (var item in Model.ProducedMovies)
 				{
 			<dd>@item.OriginalTitle</dd>
-				}
+			@General.ImageHelper("thumb", item.MovieId)
+		}
 
 		<dt>
-			Acted in:
+			<b>Acted in:</b>
 		</dt>
 		@foreach (var item in Model.ActedMovies)
 				{
 			<dd>@item.OriginalTitle</dd>
-				}
+			@General.ImageHelper("thumb", item.MovieId)
+		}
 		</dl>
+
 
 </div>

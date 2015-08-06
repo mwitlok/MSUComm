@@ -2,17 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace ImdbWeb.Controllers
 {
-    public class ImageController : Controller
-    {
+	public class ImageController : Controller
+	{
+
 		[Route("Image/{format}/{id}.jpg")]
-		public string CreateImage(string format, string id)
+		public ActionResult CreateImage(string format, string id)
 		{
-			//return string.Format("ImageController.CreateImage({0}, {1})", format, id);
-			return $"ImageController.CreateImage({format}, {id})";
-        }
+			if (format.ToLower() == "thumb")
+			{
+				new WebImage(Server.MapPath("~/App_Data/cover/" + id + ".jpg"))
+					.Resize(100, 100)
+					.AddTextWatermark("Communicate", "White", 8, "Bold")
+					.Write();
+			}
+			else if (format.ToLower() == "medium")
+			{
+				new WebImage(Server.MapPath("~/App_Data/cover/" + id + ".jpg"))
+					.Resize(300, 300)
+					.AddTextWatermark("Ingars Movie Database", "White", 10, "Bold")
+					.Write();
+			}
+			else return HttpNotFound();
+
+			return new EmptyResult();
+		}
 	}
 }
