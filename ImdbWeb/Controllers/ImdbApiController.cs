@@ -20,22 +20,31 @@ namespace ImdbWeb.Controllers
 		}
 
 		// GET: ImdbApi
-		public ActionResult Movies()
+		public ActionResult Movies(string fmt)
 		{
 			var movies = db.Movies.OrderBy(x => x.Title).Select(x => new { id = x.MovieId, title = x.Title }).ToList();
 
-			XDocument document = new XDocument
-			(
+			if (fmt.ToLower() == "json")
+			{
+				return Json(movies, JsonRequestBehavior.AllowGet);
+			}
+			else
+			{
+				XDocument document = new XDocument
+				(
 
-				new XDeclaration("1.0", "utf-8", "yes"),
-				new XElement("Movies",
-					from m in movies
-					select new XElement("Movie", new XAttribute("ID", m.id),
-					new XElement("Title", m.title))
-				)
-			);
+					new XDeclaration("1.0", "utf-8", "yes"),
+					new XElement("Movies",
+						from m in movies
+						select new XElement("Movie", new XAttribute("ID", m.id),
+						new XElement("Title", m.title))
+					)
+				);
+				
+				return Content(document.ToString(), "application/xml");
+			}
 
-			return Content(document.ToString(), "application/xml");
+			
 		}
 
 		[Route("Movie/Details/{id}.xml")]

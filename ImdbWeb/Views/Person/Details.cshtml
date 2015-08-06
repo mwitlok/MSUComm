@@ -8,45 +8,23 @@
 
 <div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
+	<dl class="dl-horizontal">
 		<dt>
-			<b>Directed:</b>
+			@Html.DisplayNameFor(model => model.Name)
 		</dt>
 
-			@foreach (var item in Model.DirectedMovies)
-			{
-				<dd>@item.OriginalTitle</dd>
-				@General.ImageHelper("thumb", item.MovieId)
-			}		
+		<dd>
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+
+		@General.MovieListerHelper(Model.DirectedMovies, "Directed:")
+
+		@General.MovieListerHelper(Model.ProducedMovies, "Produced:")
+
+		@General.MovieListerHelper(Model.ActedMovies, "Acted In:")
+	</dl>
 
 
-		<dt>
-			<b>Produced:</b>
-		</dt>
-
-		@foreach (var item in Model.ProducedMovies)
-				{
-			<dd>@item.OriginalTitle</dd>
-			@General.ImageHelper("thumb", item.MovieId)
-		}
-
-		<dt>
-			<b>Acted in:</b>
-		</dt>
-		@foreach (var item in Model.ActedMovies)
-				{
-			<dd>@item.OriginalTitle</dd>
-			@General.ImageHelper("thumb", item.MovieId)
-		}
-		</dl>
 
 
 </div>

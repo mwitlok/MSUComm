@@ -12,7 +12,7 @@ namespace ImdbWeb.Areas.Admin.Controllers
         // GET: Admin/Movie
         public ActionResult Index()
         {
-            return Content("Admin.MovieController.Index", "text/html");
+			return View();
         }
     }
 }

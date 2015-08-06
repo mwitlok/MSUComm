@@ -10,14 +10,19 @@
 		<header>
 			<img src="https://homemoviereview.files.wordpress.com/2012/07/movie-banner2-ed11.jpg">
 			<br>
-			<div> 
-					<a href="/">Home</a>
-					<a href="/Movie/Genres">Genres</a>
-					<a href="/Movie">Movies</a>
-					<a href="/Person/Actors">Actors</a>
-					<a href="/Person/Producers">Producers</a>
-					<a href="/Person/Directors">Directors</a>
-					@Html.ActionLink("Admin", "Index", "Movie", new { area = "Admin"}, null)
+			<div>
+				<a href="/">Home</a>
+				<a href="/Movie/Genres">Genres</a>
+				<a href="/Movie">Movies</a>
+				<a href="/Person/Actors">Actors</a>
+				<a href="/Person/Producers">Producers</a>
+				<a href="/Person/Directors">Directors</a>
+				@Html.ActionLink("Admin", "Index", "Movie", new { area = "Admin" }, null)
+				@if (Request.IsAuthenticated)
+				{
+					@Html.ActionLink("Logout", "Logout", "Account", new { area = "Admin" }, null)
+				}
+
 			</div>
 			<br>
 		</header>

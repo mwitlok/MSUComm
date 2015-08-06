@@ -26,7 +26,7 @@ namespace ImdbWeb.Areas.Admin.Controllers
 		public ActionResult Logout()
 		{
 			FormsAuthentication.SignOut();
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("Index", "Home", new { area=""});
 		}
 	}
 }

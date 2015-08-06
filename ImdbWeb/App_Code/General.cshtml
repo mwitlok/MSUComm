@@ -1,9 +1,5 @@
-﻿@helper HelperName(string name) {
-    // your helper can contain code and/or markup, e.g.
-    // var msg = "Hello " + name;
-    // <p>@msg</p>
-    // For more information, visit http://go.microsoft.com/fwlink/?LinkID=204658
-}
+﻿@using System.Web.Helpers
+@using System.Web.Mvc.Html
 
 @helper ImageHelper(string format, string id)
 {
@@ -11,3 +7,27 @@ string s = id + ".jpg";
 
 	<img src="~/image/@format/@s" />
 }
+
+@helper MovieListerHelper(IEnumerable<MovieDAL.Movie> movies, string header)
+{
+
+	if (movies.Any())
+	{
+
+		<dt>
+			<b>@header</b>
+		</dt>
+
+		foreach (var item in movies)
+		{
+			var Html = ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Html;
+
+			<dd>
+				@Html.ActionLink(item.Title, "Details", "Movie", new { id = item.MovieId }, null)
+			</dd>
+
+			@General.ImageHelper("thumb", item.MovieId)
+		}
+	}
+}
+
