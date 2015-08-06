@@ -10,3 +10,15 @@ C:\Users\Student\Documents\My Web Sites\MSU2015\MovieDAL\obj\Debug\MovieDAL.Migr
 C:\Users\Student\Documents\My Web Sites\MSU2015\MovieDAL\obj\Debug\MovieDAL.csproj.GenerateResource.Cache
 C:\Users\Student\Documents\My Web Sites\MSU2015\MovieDAL\obj\Debug\MovieDAL.dll
 C:\Users\Student\Documents\My Web Sites\MSU2015\MovieDAL\obj\Debug\MovieDAL.pdb
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\bin\Debug\MovieDAL.dll.config
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\bin\Debug\MovieDAL.dll
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\bin\Debug\MovieDAL.pdb
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\bin\Debug\EntityFramework.dll
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\bin\Debug\EntityFramework.xml
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\obj\Debug\MovieDAL.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\obj\Debug\MovieDAL.Migrations.Initial.resources
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\obj\Debug\MovieDAL.csproj.GenerateResource.Cache
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\obj\Debug\MovieDAL.dll
+C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\obj\Debug\MovieDAL.pdb
