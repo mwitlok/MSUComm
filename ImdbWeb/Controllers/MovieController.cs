@@ -10,7 +10,8 @@ namespace ImdbWeb.Controllers
 	[RoutePrefix("Movie")]
     public class MovieController : Controller
     {
-		public ViewResult Index()
+        [OutputCache(CacheProfile = "Medium")]
+        public ViewResult Index()
 		{
 			var db = new MovieDAL.ImdbContext();
 			ViewData.Model = db.Movies.OrderBy(x => x.Title).ToList();
@@ -18,7 +19,8 @@ namespace ImdbWeb.Controllers
 			return View();
 		}
 
-		public ViewResult Genres()
+        //[OutputCache(CacheProfile = "Medium")]
+        public ViewResult Genres()
 		{
 			var db = new MovieDAL.ImdbContext();
 			ViewData.Model = db.Genres.OrderBy(x => x.Name).ToList();
@@ -26,7 +28,8 @@ namespace ImdbWeb.Controllers
 			return View();
 		}
 
-		[Route("Genre/{genrename}")]
+        [OutputCache(CacheProfile = "MediumP")]
+        [Route("Genre/{genrename}")]
 		public ViewResult MoviesByGenre(string genrename)
 		{
 			var db = new MovieDAL.ImdbContext();
@@ -34,7 +37,8 @@ namespace ImdbWeb.Controllers
             return View("Index");
 		}
 
-		public ViewResult Details(string id)
+        //[OutputCache(CacheProfile = "MediumP")]
+        public ViewResult Details(string id)
 		{
 			var db = new MovieDAL.ImdbContext();
 

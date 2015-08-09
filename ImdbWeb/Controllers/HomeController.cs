@@ -8,7 +8,8 @@ namespace ImdbWeb.Controllers
 {
     public class HomeController : Controller
     {
-		public ViewResult Index()
+        //[OutputCache(CacheProfile = "Medium")]
+        public ViewResult Index()
 		{
 			return View();
 		}
