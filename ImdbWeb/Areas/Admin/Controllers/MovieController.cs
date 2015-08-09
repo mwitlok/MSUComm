@@ -30,10 +30,15 @@ namespace ImdbWeb.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(MovieCreateModel movie)
         {
             //TODO: Finish this method :O 
-            return View();
+            if(!ModelState.IsValid)
+            {
+                return RedirectToAction("Create", "Movie", new { area = "Admin" });
+            }
+            return RedirectToAction("Index", "Movie", new { area = "Admin" });
         }
     }
 }
