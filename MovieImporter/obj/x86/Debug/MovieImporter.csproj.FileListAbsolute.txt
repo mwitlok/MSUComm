@@ -11,3 +11,16 @@ C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\bin\Debug\EntityFr
 C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\obj\x86\Debug\MovieImporter.csprojResolveAssemblyReference.cache
 C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\obj\x86\Debug\MovieImporter.exe
 C:\Users\Student\Documents\My Web Sites\MSU2015\MovieImporter\obj\x86\Debug\MovieImporter.pdb
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\bin\Debug\MovieImporter.exe.config
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\obj\x86\Debug\MovieImporter.exe
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\obj\x86\Debug\MovieImporter.pdb
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\bin\Debug\filmer.mdb
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\bin\Debug\MovieImporter.exe
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\bin\Debug\MovieImporter.pdb
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\bin\Debug\EntityFramework.dll
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\bin\Debug\MovieDAL.dll
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\bin\Debug\MovieDAL.pdb
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\bin\Debug\EntityFramework.xml
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieImporter\obj\x86\Debug\MovieImporter.csprojResolveAssemblyReference.cache

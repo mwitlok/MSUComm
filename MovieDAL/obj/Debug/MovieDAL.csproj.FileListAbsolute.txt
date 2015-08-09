@@ -22,3 +22,15 @@ C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\obj\Debug\Mov
 C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\obj\Debug\MovieDAL.csproj.GenerateResource.Cache
 C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\obj\Debug\MovieDAL.dll
 C:\Users\Student\Documents\My Web Sites\MSU2015-M\MSUComm\MovieDAL\obj\Debug\MovieDAL.pdb
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\bin\Debug\MovieDAL.dll.config
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\bin\Debug\MovieDAL.dll
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\bin\Debug\MovieDAL.pdb
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\bin\Debug\EntityFramework.dll
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\bin\Debug\EntityFramework.xml
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\obj\Debug\MovieDAL.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\obj\Debug\MovieDAL.Migrations.Initial.resources
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\obj\Debug\MovieDAL.csproj.GenerateResource.Cache
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\obj\Debug\MovieDAL.dll
+C:\Users\Martin\Documents\GitHubVisualStudio\MSUComm\MovieDAL\obj\Debug\MovieDAL.pdb

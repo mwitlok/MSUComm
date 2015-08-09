@@ -31,3 +31,7 @@
 	}
 }
 
+@helper ExternalLink(String externalURL, String text, String target = "_blank")
+{
+    <a href="@externalURL" target="@target">@text</a>
+}
