@@ -58,6 +58,13 @@
             @Html.DisplayFor(model => model.Purchased)
         </dd>
 
+        <dt>
+            Rating:
+        </dt>
+        <dd>
+            @General.RatingHelper("postRating", "Movie", new { movieId = Model.MovieId }, 0)
+        </dd>
+
 		<dt>
 			Directors:
 		</dt>
@@ -86,45 +93,12 @@
 			<dd>@Html.ActionLink((String)item.Name, "Details", "Person", new { id = (int)item.PersonId }, null)</dd>
 		}
 
+        <dt>
+            Cover Art:
+        </dt>
+        <dd>
+            @General.ImageHelper("medium", Model.MovieId)
+        </dd>
     </dl>
 
-	@General.ImageHelper("medium", Model.MovieId)
-
-	@using (Ajax.BeginForm("postRating", "Movie", new { movieId=Model.MovieId}, new AjaxOptions { UpdateTargetId = "superbVoting", OnFailure = "alert", HttpMethod = "POST" }, null))
-	{
-		@Html.DropDownList("rating", new SelectList(new List<Int32>() { 1, 2, 3, 4, 5 }))
-		<button type="submit" value="Submit">Submit</button>
-	}
-
-	<div id="superbVoting"></div>
 </div>
-
-
-@*<script>
-	function voting(rating)
-	{
-		for (var i = 0; i < 6; i++)
-		{
-			alert("<img class=\"rating\" id=\"rat" + i + "\"  src=\"~/Content/star-on.png\" />")
-			if (i <= rating)
-			{
-				$("#superVoting").append("<img class=\"rating\" id=\"rat" + i + "\"  src=\"~/Content/star-on.png\" />");
-			}
-			else
-			{
-				$("#superVoting").append("<img class=\"rating\" id=\"rat" + i + "\" src=\"~/Content/star-off.png\" />");
-			}
-			
-		}
-	}
-
-	$(".rating").hover(
-			function ()
-			{
-				alert("asd")
-			}
-		);
-
-</script>
-
-<script>voting(5)</script>*@

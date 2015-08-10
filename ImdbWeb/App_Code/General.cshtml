@@ -34,3 +34,38 @@
 {
 	<a href="@externalURL" target="@target">@text</a>
 }
+
+@helper RatingHelper(String action, String controller, object routeValues = null, int startVal = -1, bool allowSubmit = true, AjaxOptions options = null)
+{
+    var Ajax = ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Ajax;
+
+    if (options == null)
+    {
+        options = new AjaxOptions { UpdateTargetId = "superbVoting", OnFailure = "", HttpMethod = "POST" };
+    }
+
+    using (Ajax.BeginForm(action, controller, routeValues, options, null))
+    {
+        <input type="number" name="rating" id="rating" class="rating"/>
+        <div id="superbVoting">
+            @if (allowSubmit)
+            {
+                <button type="submit" value="Submit">Submit</button>
+            }
+        </div>
+    }
+
+    @*Minimalistinc js-library for creating rating stars, see https://github.com/javiertoledo/bootstrap-rating-input*@
+    <script src="~/Content/bootstrap-rating-input.min.js"></script>
+
+    if (startVal > 0 && startVal < 6)
+    {
+        <script>
+            $("document").ready(function () {
+                setTimeout(function () {
+                    $(".rating-input").find("[data-value='" + @startVal + "']").trigger("click");
+                }, 200);
+            });
+        </script>
+    }
+}

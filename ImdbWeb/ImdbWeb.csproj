@@ -662,6 +662,7 @@
     <Content Include="App_Data\cover\8717418276218.jpg" />
     <Content Include="App_Data\cover\8717418306373.jpg" />
     <Content Include="App_Data\cover\8717418314637.jpg" />
+    <Content Include="Content\bootstrap-rating-input.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\popup.css" />
@@ -697,6 +698,7 @@
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\MovieController.cs" />
     <Compile Include="Areas\Admin\Models\MovieModels\MovieViewModel.cs" />
+    <Compile Include="Controllers\AbstractControllerBase.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ImdbApiController.cs" />
@@ -707,6 +709,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Extensions.cs" />
     <Compile Include="Utilities\Validators\MovieIdValidator.cs" />
   </ItemGroup>
   <ItemGroup>
