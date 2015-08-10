@@ -10,10 +10,8 @@
 
 @helper MovieListerHelper(IEnumerable<MovieDAL.Movie> movies, string header)
 {
-
-if (movies.Any())
-{
-
+    if (movies.Any())
+    {
 		<dt>
 			<b>@header</b>
 		</dt>
@@ -27,7 +25,6 @@ if (movies.Any())
 				new AjaxOptions { OnBegin = "dimBackground", OnSuccess = "showPopup", UpdateTargetId = "popup"});
 
 			</dd>
-
 			@General.ImageHelper("thumb", item.MovieId)
 		}
 	}

@@ -8,23 +8,19 @@ using System.Web.Mvc;
 namespace ImdbWeb.Controllers
 {
 	[RoutePrefix("Movie")]
-    public class MovieController : Controller
+    public class MovieController : AbstractControllerBase
     {
         [OutputCache(CacheProfile = "Medium")]
         public ViewResult Index()
 		{
-			var db = new MovieDAL.ImdbContext();
 			ViewData.Model = db.Movies.OrderBy(x => x.Title).ToList();
-
 			return View();
 		}
 
         //[OutputCache(CacheProfile = "Medium")]
         public ViewResult Genres()
 		{
-			var db = new MovieDAL.ImdbContext();
 			ViewData.Model = db.Genres.OrderBy(x => x.Name).ToList();
-
 			return View();
 		}
 
@@ -32,7 +28,6 @@ namespace ImdbWeb.Controllers
         [Route("Genre/{genrename}")]
 		public ViewResult MoviesByGenre(string genrename)
 		{
-			var db = new MovieDAL.ImdbContext();
 			ViewData.Model = db.Movies.Where(x => x.Genre.Name == genrename).OrderBy(x => x.Title).ToList();
             return View("Index");
 		}
@@ -40,8 +35,6 @@ namespace ImdbWeb.Controllers
         //[OutputCache(CacheProfile = "MediumP")]
         public ActionResult Details(string id)
 		{
-			var db = new MovieDAL.ImdbContext();
-
 			var movie = db.Movies.Find(id);
 	
 			ViewData.Model = movie;
@@ -59,8 +52,6 @@ namespace ImdbWeb.Controllers
 		{
 			if(rating > 0 && rating <= 5)
 			{
-				var db = new MovieDAL.ImdbContext();
-
 				var movie = db.Movies.Find(movieId);
 
 				if(movie != null)
@@ -76,7 +67,6 @@ namespace ImdbWeb.Controllers
 					return Json("Tank you for voting");
 				}
 			}
-
 			return HttpNotFound("FUCK");
 		}
 
