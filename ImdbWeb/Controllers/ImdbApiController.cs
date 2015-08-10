@@ -20,6 +20,7 @@ namespace ImdbWeb.Controllers
 		}
 
 		// GET: ImdbApi
+        [OutputCache(CacheProfile = "MediumP")]
 		public ActionResult Movies(string fmt)
 		{
 			var movies = db.Movies.OrderBy(x => x.Title).Select(x => new { id = x.MovieId, title = x.Title }).ToList();
@@ -45,7 +46,8 @@ namespace ImdbWeb.Controllers
 			}			
 		}
 
-		[Route("Movie/Details/{id}.xml")]
+        //[OutputCache(CacheProfile = "MediumP")]
+        [Route("Movie/Details/{id}.xml")]
 		public ActionResult Details(string id)
 		{
 			var movies = db.Movies.Find(id);
