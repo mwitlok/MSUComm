@@ -3,37 +3,60 @@
     <head>
         <title>@Page.Title</title>
         @RenderSection("head", required: false)
-    </head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+		<link href="~/Content/popup.css" rel="stylesheet" />
+		<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
 
-    <body>
-
-		<header>
-			<img src="https://homemoviereview.files.wordpress.com/2012/07/movie-banner2-ed11.jpg">
-			<br>
-			<div>
-				<a href="/">Home</a>
-				<a href="/Movie/Genres">Genres</a>
-				<a href="/Movie">Movies</a>
-				<a href="/Person/Actors">Actors</a>
-				<a href="/Person/Producers">Producers</a>
-				<a href="/Person/Directors">Directors</a>
-				@Html.ActionLink("Admin", "Index", "Movie", new { area = "Admin" }, null)
-				@if (Request.IsAuthenticated)
-				{
-					@Html.ActionLink("Logout", "Logout", "Account", new { area = "Admin" }, null)
-				}
-
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+					@Html.ActionLink("Genres", "Genres", "Movie", new { area = "" }, new { @class = "navbar-brand" })
+					@Html.ActionLink("Movies", "Index", "Movie", new { area = "" }, new { @class = "navbar-brand" })
+					@Html.ActionLink("Actors", "Actors", "Person", new { area = "" }, new { @class = "navbar-brand" })
+					@Html.ActionLink("Directors", "Directors", "Person", new { area = "" }, new { @class = "navbar-brand" })
+					@Html.ActionLink("Producers", "Producers", "Person", new { area = "" }, new { @class = "navbar-brand" })
+					@Html.ActionLink("Admin", "Index", "Movie", new { area = "Admin" }, new { @class = "navbar-brand" })
+					@if (Request.IsAuthenticated)
+					{
+						@Html.ActionLink("Logout", "Logout", "Account", new { area = "Admin" }, new { @class = "navbar-brand" })
+					}
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav"></ul>
+				</div>
 			</div>
-			<br>
-		</header>
+		</div>
 
-        @RenderBody()
+		@RenderBody()
 
 		<footer>
 			&copy; Communicate AS by Jonas, Snorre og Martin
 		</footer>
 
-    </body>
 
+		<script src="~/Scripts/jquery-2.1.4.min.js"></script>
+		<script src="~/Scripts/jquery.validate.min.js"></script>
+		<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+		<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+		<script src="~/Content/popup.js"></script>
+		<script>
+			
+			function dimBackground2()
+			{
+				alert("Hei din sei");
+			}
 
+		</script>
+	</body>
 </html>

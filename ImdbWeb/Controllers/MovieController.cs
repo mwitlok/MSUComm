@@ -38,7 +38,7 @@ namespace ImdbWeb.Controllers
 		}
 
         //[OutputCache(CacheProfile = "MediumP")]
-        public ViewResult Details(string id)
+        public ActionResult Details(string id)
 		{
 			var db = new MovieDAL.ImdbContext();
 
@@ -46,7 +46,38 @@ namespace ImdbWeb.Controllers
 	
 			ViewData.Model = movie;
 
+			if(Request.IsAjaxRequest())
+			{
+				return PartialView();
+			}
+
 			return View();
+		}
+
+		[HttpPost]
+		public ActionResult postRating(int rating, string movieId)
+		{
+			if(rating > 0 && rating <= 5)
+			{
+				var db = new MovieDAL.ImdbContext();
+
+				var movie = db.Movies.Find(movieId);
+
+				if(movie != null)
+				{
+					movie.Ratings.Add(new MovieDAL.Rating()
+					{
+						Movie = movie,
+						Vote = rating
+					});
+
+					db.SaveChanges();
+
+					return Json("Tank you for voting");
+				}
+			}
+
+			return HttpNotFound("FUCK");
 		}
 
 	}

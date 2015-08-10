@@ -1,5 +1,5 @@
 ﻿@using System.Web.Helpers
-@using System.Web.Mvc.Html
+@using System.Web.Mvc.Ajax
 
 @helper ImageHelper(string format, string id)
 {
@@ -11,8 +11,8 @@
 @helper MovieListerHelper(IEnumerable<MovieDAL.Movie> movies, string header)
 {
 
-	if (movies.Any())
-	{
+if (movies.Any())
+{
 
 		<dt>
 			<b>@header</b>
@@ -20,10 +20,12 @@
 
 		foreach (var item in movies)
 		{
-			var Html = ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Html;
+			var Ajax = ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Ajax;
 
 			<dd>
-				@Html.ActionLink(item.Title, "Details", "Movie", new { id = item.MovieId }, null)
+				@Ajax.ActionLink(item.Title, "Details", "Movie", new { id = item.MovieId },
+				new AjaxOptions { OnBegin = "dimBackground", OnSuccess = "showPopup", UpdateTargetId = "popup"});
+
 			</dd>
 
 			@General.ImageHelper("thumb", item.MovieId)
@@ -33,5 +35,5 @@
 
 @helper ExternalLink(String externalURL, String text, String target = "_blank")
 {
-    <a href="@externalURL" target="@target">@text</a>
+	<a href="@externalURL" target="@target">@text</a>
 }

@@ -90,4 +90,41 @@
 
 	@General.ImageHelper("medium", Model.MovieId)
 
+	@using (Ajax.BeginForm("postRating", "Movie", new { movieId=Model.MovieId}, new AjaxOptions { UpdateTargetId = "superbVoting", OnFailure = "alert", HttpMethod = "POST" }, null))
+	{
+		@Html.DropDownList("rating", new SelectList(new List<Int32>() { 1, 2, 3, 4, 5 }))
+		<button type="submit" value="Submit">Submit</button>
+	}
+
+	<div id="superbVoting"></div>
 </div>
+
+
+@*<script>
+	function voting(rating)
+	{
+		for (var i = 0; i < 6; i++)
+		{
+			alert("<img class=\"rating\" id=\"rat" + i + "\"  src=\"~/Content/star-on.png\" />")
+			if (i <= rating)
+			{
+				$("#superVoting").append("<img class=\"rating\" id=\"rat" + i + "\"  src=\"~/Content/star-on.png\" />");
+			}
+			else
+			{
+				$("#superVoting").append("<img class=\"rating\" id=\"rat" + i + "\" src=\"~/Content/star-off.png\" />");
+			}
+			
+		}
+	}
+
+	$(".rating").hover(
+			function ()
+			{
+				alert("asd")
+			}
+		);
+
+</script>
+
+<script>voting(5)</script>*@
