@@ -9,16 +9,8 @@ using System.Xml.Serialization;
 
 namespace ImdbWeb.Controllers
 {
-	public class ImdbApiController : Controller
+	public class ImdbApiController : AbstractControllerBase
 	{
-		MovieDAL.ImdbContext db = new MovieDAL.ImdbContext();
-
-		protected override void Dispose(bool disposable)
-		{
-			if (disposable) db.Dispose();
-			base.Dispose(disposable);
-		}
-
 		// GET: ImdbApi
         [OutputCache(CacheProfile = "MediumP")]
 		public ActionResult Movies(string fmt)

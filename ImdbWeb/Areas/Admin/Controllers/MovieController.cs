@@ -5,20 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using ImdbWeb.Areas.Admin.Models.MovieModels;
 using MovieDAL;
+using ImdbWeb.Controllers;
 
 namespace ImdbWeb.Areas.Admin.Controllers
 {
 	[Authorize]
-    public class MovieController : Controller
+    public class MovieController : AbstractControllerBase
     {
 		const int MINUTES_IN_HOUR = 60;
-		ImdbContext db = new MovieDAL.ImdbContext();
-
-		protected override void Dispose(bool disposable)
-		{
-			if (disposable) db.Dispose();
-			base.Dispose(disposable);
-		}
 
 		// GET: Admin/Movie
 		//[OutputCache(CacheProfile = "Medium")]

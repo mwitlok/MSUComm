@@ -49,8 +49,13 @@ namespace ImdbWeb.Areas.Admin.Models.MovieModels
 		[Display(Name = "Genre")]
 		public int GenreId { get; set; }
 
-		public IEnumerable<Genre> genreList { get { var db = new ImdbContext();
-										return db.Genres.OrderBy(x => x.Name);
-			} }
+		public IEnumerable<Genre> genreList
+        {
+            get
+            {
+                var db = new ImdbContext();
+				return db.Genres.OrderBy(x => x.Name);
+			}
+        }
 	}
 }
