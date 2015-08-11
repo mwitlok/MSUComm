@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -48,7 +50,8 @@ namespace ImdbWeb.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult postRating(int rating, string movieId)
+		[ValidateAntiForgeryToken]
+		public async Task<ActionResult> postRating(int rating, string movieId)
 		{
 			if(rating > 0 && rating <= 5)
 			{
@@ -62,12 +65,12 @@ namespace ImdbWeb.Controllers
 						Vote = rating
 					});
 
-					db.SaveChanges();
+					await db.SaveChangesAsync();
 
 					return Json("Tank you for voting");
 				}
 			}
-			return HttpNotFound("FUCK");
+			return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 		}
 
 	}
