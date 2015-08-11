@@ -86,6 +86,23 @@
     </div>
 }
 
+<input class="form-control" id="searchBox" type="text" style="display:inline-block"/>
+<input type="button" value="Search Movie" id="findMovie" class="btn btn-default" style="display:inline-block" />
+<div id="movieResults" style="display:none;">
+    <table class="table" style="width:40%">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody id="resultList">
+        </tbody>
+    </table>
+</div>
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<script src="~/Content/stuff.js"></script>
