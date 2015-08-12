@@ -3,11 +3,12 @@
 @{
     ViewBag.Title = "Person";
 }
-
-@for (char i = (char)65; i <= 90; i++)
-{
-	<a href="#@i">@i </a>
-}
+<div class="alphabetMenu">
+	@for (char i = (char)65; i <= 90; i++)
+	{
+		<a href="#@i" class="movieListHeader">@i </a>
+	}
+</div>
 
 <ul>
 	@{

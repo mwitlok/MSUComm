@@ -1,18 +1,11 @@
 ﻿@model IEnumerable<MovieDAL.Movie>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-	<meta name="viewport" content="width=device-width" />
-	<title>Index</title>
-</head>
-<body>
-
-	@for (char i = (char)65; i <= 90; i++)
-	{
-		<a href ="#@i">@i</a>
-	}
+	<div class="alphabetMenu">
+		@for (char i = (char)65; i <= 90; i++)
+		{
+			<a href ="#@i" class="movieListHeader">@i</a>
+		}
+	</div>
 
 	<ul>
 		@{
@@ -33,6 +26,3 @@
 			</li>
 		}
 	</ul>
-
-</body>
-</html>

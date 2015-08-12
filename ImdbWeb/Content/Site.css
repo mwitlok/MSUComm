@@ -1,4 +1,7 @@
-﻿body {
+﻿
+/*Global -----------------------------------------------------------------------------------------------------------*/
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -14,5 +17,84 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+ul li
+{
+	list-style-type: none;
+}
+
+.coolHr
+{
+	border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+/*Top menu --------------------------------------------------------------------------------------------------------*/
+.movieListHeader
+{
+	font-size: 2em;
+	margin-top: 10px;
+	display: inline-block;
+}
+
+.alphabetMenu
+{
+	margin: 0 auto 0 auto;
+	width: 70%;
+}
+
+/*Body content ----------------------------------------------------------------------------------------------------*/
+
+#mainContent
+{
+	margin: 20px auto 10px auto;
+	padding: 10px;
+	position: relative;
+	width:900px;
+	border: thin solid black;
+	border-radius: 3px;
+	box-shadow: hsla(0, 0%, 50%, 0.5) 0 0 50px;
+}
+
+/*Movie Details ---------------------------------------------------------------------------------------------------*/
+
+#MovieDetailsSection1
+{
+	width: 70%;
+	display: inline-block;
+	padding: 0 0 20px 0;
+}
+
+#MovieDetailsSection1 dl
+{
+	margin: 0;
+}
+
+#MovieDetailsSection2
+{
+	float: right;
+	margin: 0 10px 0 0;
+}
+
+#ratingButton
+{
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.rating-input
+{
+	float: left;
+	padding-top: 3px;
+}
+
+.detailsTitle
+{
+	font-size: 30px;
+	font-weight: bold;
+	margin-left: 30px;
+	text-decoration-color: 
 }
 

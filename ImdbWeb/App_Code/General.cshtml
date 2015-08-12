@@ -22,8 +22,7 @@
 
 			<dd>
 				@Ajax.ActionLink(item.Title, "Details", "Movie", new { id = item.MovieId },
-				new AjaxOptions { OnBegin = "dimBackground", OnSuccess = "showPopup", UpdateTargetId = "popup", OnFailure="resetBackground"});
-
+				new AjaxOptions { OnBegin = "dimBackground", OnSuccess = "showPopup", UpdateTargetId = "popup", OnFailure="resetBackground"})
 			</dd>
 			@General.ImageHelper("thumb", item.MovieId)
 		}
@@ -49,12 +48,11 @@
 		var Html = ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Html;
 		@Html.AntiForgeryToken()
         <input type="number" name="rating" id="rating" class="rating"/>
-        <div id="superbVoting">
-            @if (allowSubmit)
-            {
-                <button type="submit" value="Submit">Vote</button>
-            }
-        </div>
+        if (allowSubmit)
+        {
+            <button id="ratingButton" type="submit" value="Submit">Vote</button>
+            <span id="superbVoting"></span>
+        }
     }
 
     @*Minimalistinc js-library for creating rating stars, see https://github.com/javiertoledo/bootstrap-rating-input*@

@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>@Model.</h2>
+<h2>@Model.Name</h2>
 
 <div>
     <hr />
@@ -17,11 +17,11 @@
 			@Html.DisplayFor(model => model.Name)
 		</dd>
 
-		@General.MovieListerHelper(Model.DirectedMovies, "Directed:")
+		@General.MovieListerHelper(Model.DirectedMovies, "Directed")
 
-		@General.MovieListerHelper(Model.ProducedMovies, "Produced:")
+		@General.MovieListerHelper(Model.ProducedMovies, "Produced")
 
-		@General.MovieListerHelper(Model.ActedMovies, "Acted In:")
+		@General.MovieListerHelper(Model.ActedMovies, "Acted In")
 	</dl>
 
 </div>
