@@ -8,7 +8,7 @@
 <h4 class="detailsTitle">@Model.Title</h4>
 <hr />
 
-<div id="MovieDetailsSection1">
+<section id="MovieDetailsSection1">
 	<dl class="dl-horizontal">
 		<dt>
 			@Html.DisplayNameFor(model => model.OriginalTitle)
@@ -94,10 +94,10 @@
 			<dd>@Html.ActionLink((String)item.Name, "Details", "Person", new { id = (int)item.PersonId }, null)</dd>
 		}
 	</dl>
-</div>
+</section>
 
  
-<div id="MovieDetailsSection2">@General.ImageHelper("medium", Model.MovieId)</div>
+<section id="MovieDetailsSection2">@General.ImageHelper("medium", Model.MovieId)</section>
 
    
 
