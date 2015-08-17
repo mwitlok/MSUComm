@@ -10,7 +10,7 @@ namespace ImdbWeb.Controllers
 	public class ImageController : Controller
 	{
 
-		[Route("Image/{format}/{id}.jpg")]
+        [Route("Image/{format}/{id}.jpg")]
 		public ActionResult CreateImage(string format, string id)
 		{
 			if (format.ToLower() == "thumb")

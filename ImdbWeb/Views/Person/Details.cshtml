@@ -17,12 +17,17 @@
 			@Html.DisplayFor(model => model.Name)
 		</dd>
 
-		@General.MovieListerHelper(Model.DirectedMovies, "Directed")
+		@General.MovieListerHelper(Model.DirectedMovies, "Directed", "directedList")
 
-		@General.MovieListerHelper(Model.ProducedMovies, "Produced")
+        @General.MovieListerHelper(Model.ProducedMovies, "Produced", "producedList")
 
-		@General.MovieListerHelper(Model.ActedMovies, "Acted In")
-	</dl>
+        @General.MovieListerHelper(Model.ActedMovies, "Acted In", "actedList")
+</dl>
 
 </div>
+
+@section Scripts
+{
+    <script src="~/Scripts/Headings.js"></script>
+}
 

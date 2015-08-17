@@ -98,3 +98,32 @@ ul li
 	text-decoration-color: 
 }
 
+/*Person details ------------------------------------------------------------------------*/
+
+.js .directedList
+{
+    display: none;
+}
+
+.js .producedList
+{
+    display: none;
+}
+
+.js .actedList
+{
+    display: none;
+}
+
+.js #directedList
+{
+}
+
+.js #producedList
+{
+}
+
+.js #actedList
+{
+}
+
