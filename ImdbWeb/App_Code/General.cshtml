@@ -10,26 +10,24 @@ string s = id + ".jpg";
 
 @helper MovieListerHelper(IEnumerable<MovieDAL.Movie> movies, string header, string cssId)
 {
-if (movies.Any())
-{
-        <dt id="@cssId">
-            <b>@header</b>
-        </dt>
+	if (movies.Any())
+	{
+		<dt id="@cssId">
+			<b>@header</b>
+		</dt>
+
+		<dd class="@cssId">
+			@foreach (var item in movies)
+			{
+				var Ajax = ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Ajax;
 
 
-    foreach (var item in movies)
-    {
-        var Ajax = ((System.Web.Mvc.WebViewPage)WebPageContext.Current.Page).Ajax;
-
-            <dd class="@cssId">
-                @Ajax.ActionLink(item.Title, "Details", "Movie", new { id = item.MovieId },
-                new AjaxOptions { OnBegin = "dimBackground", OnSuccess = "showPopup", UpdateTargetId = "popup", OnFailure = "resetBackground" })
-                @General.ImageHelper("thumb", item.MovieId)
-            </dd>
-
-
-    }
-}
+				@Ajax.ActionLink(item.Title, "Details", "Movie", new { id = item.MovieId },
+					new AjaxOptions { OnBegin = "dimBackground", OnSuccess = "showPopup", UpdateTargetId = "popup", OnFailure = "resetBackground" })
+				@General.ImageHelper("thumb", item.MovieId)
+			}
+		</dd>
+	}
 }
 
 @helper ExternalLink(String externalURL, String text, String target = "_blank")

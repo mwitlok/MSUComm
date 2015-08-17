@@ -31,6 +31,10 @@ ul li
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
+footer{
+	margin-left: 200px;
+}
+
 /*Top menu --------------------------------------------------------------------------------------------------------*/
 .movieListHeader
 {
@@ -56,6 +60,7 @@ ul li
 	border: thin solid black;
 	border-radius: 3px;
 	box-shadow: hsla(0, 0%, 50%, 0.5) 0 0 50px;
+	overflow:hidden;
 }
 
 /*Movie Details ---------------------------------------------------------------------------------------------------*/
@@ -100,30 +105,18 @@ ul li
 
 /*Person details ------------------------------------------------------------------------*/
 
-.js .directedList
+.js .directedList, .js .producedList, .js .actedList
 {
     display: none;
+	margin: 10px 0;
+	clear: left;
+	padding-left: 170px;
 }
 
-.js .producedList
-{
-    display: none;
-}
 
-.js .actedList
+.js #directedList, .js #producedList, .js #actedList
 {
-    display: none;
-}
-
-.js #directedList
-{
-}
-
-.js #producedList
-{
-}
-
-.js #actedList
-{
+	cursor: pointer;
+	text-decoration:underline;
 }
 

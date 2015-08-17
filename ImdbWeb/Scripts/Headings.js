@@ -1,10 +1,11 @@
-﻿
-$(function ()
-{
-    $('.directedList').on('click', rollDownList('.directedList'))
-}) 
+﻿"use strict";
 
-function rollDownList(className)
-{ 
-    $(className + "").slideToggle();
+$('#directedList').on('click', { listID: ".directedList" }, rollDownList);
+$('#producedList').on('click', { listID: ".producedList" }, rollDownList);
+$('#actedList').on('click', { listID: ".actedList" }, rollDownList);
+
+
+function rollDownList(event)
+{
+	$(event.data.listID).slideToggle();
 }
